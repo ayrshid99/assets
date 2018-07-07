@@ -1,0 +1,12 @@
+
+
+  <div *ngFor="let item  of categoryAndCount | async;">
+    <div class="row">
+
+       <div *ngFor="let i  of item ;  let n=index">
+      
+          <app-dash-board-tile [name]="i.name" [count]="i.count" [i]="n"></app-dash-board-tile>
+       </div>
+</div> 
+
+    </div>

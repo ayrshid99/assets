@@ -1,0 +1,10 @@
+
+
+
+
+<div  [@fadeInOut] *ngIf="message | async" [ngClass]="{ 'alert': (message | async), 'alert-success': (message | async)?.type === 'success', 'alert-danger': (message | async)?.type === 'error' }">
+
+	<p>{{(message | async)?.message}}</p>
+
+
+</div>

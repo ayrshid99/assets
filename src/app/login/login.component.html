@@ -1,0 +1,39 @@
+<div id="login-box" class="form-box">
+
+
+
+	
+	{{loading | async | json}}
+
+	<div style="margin-left:110px; margin-right:auto">
+
+		<img height="80px" width="80px" src="logo.png">
+	</div>
+
+	<div style="background: #EAEAEC;" class="header">
+
+		<p style="color: red;">Login</p>
+	</div>
+
+
+
+	<form action="#" (ngSubmit)="onSubmit(f)" #f="ngForm">
+
+		<div class="body bg-gray">
+			<div class="form-group">
+				<input type="text" placeholder="User ID" class="form-control" ngModel name="username">
+			</div>
+			<div class="form-group">
+				<input type="password" ngModel name="password" placeholder="Password" class="form-control">
+			</div>
+
+		</div>
+		<div class="footer" style="background: #EAEAEC;">
+			<button class="btn bg-red btn-block" type="submit" [disabled]="loading | async">Sign me
+					</button>
+		</div>
+
+	</form>
+
+
+</div>

@@ -1,3 +1,47 @@
-<h1>
-  {{title}}
-</h1>
+
+
+
+
+
+
+
+
+    
+<app-header  *ngIf="authenticated | async"></app-header>
+
+
+ <!--style="min-height: 975px;" may need to add-->
+<div   class="wrapper row-offcanvas row-offcanvas-left">
+
+
+
+<aside  *ngIf="authenticated  | async"  class="left-side sidebar-offcanvas" style="min-height: 975px;">
+
+<app-side-menu  ></app-side-menu>
+
+</aside>
+
+<aside [ngClass]="{'right-side':authenticated | async}">
+
+<section class="content">
+
+
+
+<app-alert></app-alert>
+<div class="preeloader" id="preloader"  *ngIf="loading | async" >
+    <img src="http://www.arabianbusiness.com/skins/ab.main/gfx/loading_spinner.gif" class="img-responsive center-block">
+	<p class="text-center loadText">Loading...</p>
+</div>
+
+<router-outlet ></router-outlet>
+
+
+</section>
+</aside>
+</div>
+
+
+
+
+
+
