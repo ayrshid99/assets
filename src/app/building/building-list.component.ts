@@ -7,6 +7,10 @@ import { BuildingService } from '../services/building.service'
 import { AlertService } from '../services/alert.service'
 
 
+
+
+
+
 import { Building } from '../domain/building'
 
 @Component({
@@ -44,7 +48,7 @@ this.store.select("entitiesCreated").
 map((state:any) => state.buildingCreated).
 subscribe((status) =>  {
 
-if(status)  
+if(status)
 this.store.dispatch(loadBuildings({ page: this.page.number, sortBy: this.sortBy }))
 }
 )
@@ -53,7 +57,7 @@ this.store.select("entitiesCreated").
 map((state:any) => state.buildingUpdated).
 subscribe((status) =>  {
 
-if(status)  
+if(status)
 this.store.dispatch(loadBuildings({ page: this.page.number, sortBy: this.sortBy }))
 }
 )
@@ -66,9 +70,9 @@ this.store.dispatch(loadBuildings({ page: this.page.number, sortBy: this.sortBy 
 
     /*
         this._buildingService.buildingCreated.subscribe(message => {
-    
+
           this.loadPage(this.page.number, this.sortBy)
-    
+
         })*/
   }
 
@@ -130,14 +134,14 @@ this.store.dispatch(loadBuildings({ page: this.page.number, sortBy: this.sortBy 
   onNextPage(page: Number) {
 
     console.log("page to load is " + page)
-    
+
     this.store.dispatch(loadBuildings({ page: page, sortBy: this.sortBy }));
 
   }
 
 
 
- 
+
 
 
 
